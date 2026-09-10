@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+
+<body>
+
+    <h1>To-Do List</h1>
+
+    <p>Today is {{ day_of_week }}</p>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/submit" method="POST">
+
+        <div>
+            <label for="item_name">Item Name:</label>
+            <input
+                type="text"
+                id="item_name"
+                name="item_name"
+                placeholder="Enter item name"
+                required
+            >
+        </div>
+
+        <br>
+
+        <div>
+            <label for="item_description">Item Description:</label>
+            <textarea
+                id="item_description"
+                name="item_description"
+                placeholder="Enter item description"
+                rows="5"
+                cols="40"
+                required
+            ></textarea>
+        </div>
+
+        <br>
+
+        <button type="submit">Add Item</button>
+
+    </form>
+
+    <br>
+
+    <a href="/data">View To-Do Items</a>
+
+</body>
+</html>
