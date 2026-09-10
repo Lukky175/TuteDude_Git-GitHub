@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do Items</title>
+</head>
+
+<body>
+
+    <h1>To-Do Items</h1>
+
+    {% if data %}
+        <ul>
+            {% for item in data %}
+                <li>
+                    <strong>{{ item.item_name }}</strong>
+                    <p>{{ item.item_description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No to-do items found.</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/">Add New Item</a>
+
+</body>
+</html>
+
